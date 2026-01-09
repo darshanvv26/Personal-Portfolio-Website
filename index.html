@@ -5,9 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Darshan Portfolio Website</title>
+
     <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/2f30317137.js" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
     <style>
         html {
             scroll-behavior: smooth;
@@ -17,11 +19,13 @@
 
 <body>
 
-<!--------------------------------- HEADER ------------------------------------->
+<!-------------------------------- HEADER -------------------------------->
 <div id="header">
     <div class="container">
+
         <nav>
             <img src="images/logo.png" class="logo">
+
             <ul id="sidemenu">
                 <li><a href="#header">Home</a></li>
                 <li><a href="#about">About</a></li>
@@ -31,6 +35,7 @@
                 <li><a href="https://github.com/darshanvv26">Github</a></li>
                 <i class="fa-solid fa-circle-xmark" onclick="closemenu()"></i>
             </ul>
+
             <i class="fa-solid fa-bars" onclick="openmenu()"></i>
         </nav>
 
@@ -40,7 +45,7 @@
 
         <div class="header-text">
             <section id="home">
-                <h1>Hi, <span class="typing"></span></h1>
+                <h1><span class="typing"></span></h1>
                 <button onclick="downloadResume()">Download CV</button>
             </section>
         </div>
@@ -49,10 +54,11 @@
     </div>
 </div>
 
-<!--------------------------------- ABOUT ------------------------------------->
+<!-------------------------------- ABOUT -------------------------------->
 <div id="about">
     <div class="container">
         <div class="row">
+
             <div class="about-col1">
                 <img src="images/user.png">
             </div>
@@ -62,91 +68,62 @@
 
                 <p>
                     I am <b>Darshan V V</b>, a data-driven engineer with strong interests in
-                    <b>Big Data Analytics, Data Engineering, and Machine Learning</b>.
-                    Currently pursuing my <b>Master of Engineering in Big Data Analytics</b>
-                    at Manipal School of Information Sciences (MAHE).
-                    <br><br>
-                    I have a strong foundation in data structures, algorithms, and object-oriented
-                    programming, with hands-on experience in working with large-scale datasets,
-                    designing efficient data pipelines, and performing data analysis using modern
-                    tools and frameworks.
-                    <br><br>
-                    My practical exposure includes building end-to-end data-driven applications,
-                    developing Retrieval-Augmented Generation (RAG) systems, creating interactive
-                    dashboards, and optimizing SQL queries for performance and scalability.
-                    I enjoy translating raw data into meaningful insights that support informed
-                    decision-making.
-                    <br><br>
-                    I am a curious and continuous learner who actively explores emerging
-                    technologies in data engineering and AI, and I seek opportunities that challenge
-                    my problem-solving abilities while allowing me to contribute to impactful,
-                    real-world solutions.
-                </p>
-
-                <!-- EXPERIENCE INSIDE ABOUT -->
-                <br>
-                <h2 class="subtitle" style="font-size: 22px;">Experience</h2>
-                <br>
-
-                <p>
-                    <b>Data Analyst Intern – Nineleaps Technology, Bangalore</b><br>
-                    June 2024 – August 2024
-                    <br><br>
-                    • Analyzed large-scale datasets using Python (Pandas, NumPy) and MySQL to derive
-                    actionable insights.<br>
-                    • Designed and optimized PySpark-based data pipelines and improved SQL query
-                    performance for high-volume structured data.<br>
-                    • Built interactive dashboards and automated reporting workflows using Looker
-                    Studio and Google Sheets, reducing manual effort.<br>
-                    • Collaborated with cross-functional teams and validated LLM-generated SQL queries
-                    for correctness and efficiency.
+                    <b>Data Engineering, Big Data Analytics, and Machine Learning</b>.
+                    I enjoy building scalable data pipelines, working with structured data,
+                    and developing analytical and AI-driven solutions that solve real-world problems.
                 </p>
 
                 <!-- TABS -->
                 <div class="tab-titles">
-                    <p class="tab-links active-link" onclick="opentab('skills', event)">Skills</p>
-                    <p class="tab-links" onclick="opentab('projects', event)">Projects</p>
-                    <p class="tab-links" onclick="opentab('education', event)">Education</p>
+                    <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                    <p class="tab-links" onclick="opentab('projects')">Projects</p>
+                    <p class="tab-links" onclick="opentab('education')">Education</p>
+                    <p class="tab-links" onclick="opentab('experience')">Experience</p>
                 </div>
 
+                <!-- SKILLS TAB -->
                 <div class="tab-contents active-tab" id="skills">
                     <ul>
-                        <li><span>Languages</span><br>Python, R, C, SQL</li>
-                        <li><span>Data Tools</span><br>Pandas, NumPy, PySpark, Power BI, MySQL</li>
-                        <li><span>Big Data</span><br>Hadoop, Spark, Hive, Sqoop</li>
-                        <li><span>ML / AI</span><br>LangChain, Hugging Face, Pinecone, FAISS</li>
+                        <li><span>Programming</span><br>Python, SQL</li>
+                        <li><span>Data Engineering</span><br>PySpark, Hadoop, Spark</li>
+                        <li><span>Data Analysis</span><br>Pandas, NumPy, Power BI</li>
+                        <li><span>Machine Learning</span><br>Scikit-learn, ML Pipelines</li>
                     </ul>
                 </div>
 
+                <!-- PROJECTS TAB -->
                 <div class="tab-contents" id="projects">
                     <ul>
                         <li>
                             <span>Cricket Stats Analysis</span><br>
-                            Tools: MySQL, HTML, CSS, JavaScript, Python, Flask
+                            Python, Flask, MySQL-based analytics platform
                         </li>
                         <li>
                             <span>Desktop Screen Sharing Application</span><br>
-                            Tools: HTML, CSS, JavaScript, NodeJS, JSON
-                        </li>
-                        <li>
-                            <span>MSIS Student Chatbot (RAG)</span><br>
-                            Retrieval-Augmented Generation chatbot using vector databases and
-                            Streamlit UI.
+                            NodeJS-based real-time screen sharing system
                         </li>
                     </ul>
                 </div>
 
+                <!-- EDUCATION TAB -->
                 <div class="tab-contents" id="education">
                     <ul>
                         <li>
-                            <span>Master of Engineering – Big Data Analytics</span><br>
-                            Manipal School of Information Sciences (CGPA: 9.08)
-                        </li>
-                        <li>
                             <span>Bachelor of Engineering – AIML</span><br>
-                            R N Shetty Institute of Technology (CGPA: 8.99)
+                            RNS Institute of Technology
                         </li>
                     </ul>
+                </div>
+
+                <!-- EXPERIENCE TAB -->
+                <div class="tab-contents" id="experience">
+                    <p>
+                        Worked as a <b>Data Analyst Intern</b> at <b>Nineleaps Technology</b>, where
+                        I analyzed large datasets using Python and SQL, built and optimized
+                        PySpark-based data pipelines, and created interactive dashboards for
+                        business reporting. I collaborated with cross-functional teams and
+                        validated LLM-generated SQL queries to ensure accuracy and performance.
+                    </p>
                 </div>
 
             </div>
@@ -154,56 +131,73 @@
     </div>
 </div>
 
-<!--------------------------------- SKILLS ------------------------------------->
+<!-------------------------------- SKILL SET (ICONS) -------------------------------->
 <div id="skillss">
     <div class="container">
         <h1 class="subtitle">My Skill Set</h1>
+
         <div class="work-list">
-            <div class="work"><i class="fa-brands fa-python"></i><p>Python</p></div>
-            <div class="work"><i class="fa-solid fa-database"></i><p>SQL / MySQL</p></div>
-            <div class="work"><i class="fa-brands fa-js"></i><p>JavaScript</p></div>
-            <div class="work"><i class="fa-brands fa-html5"></i><p>HTML</p></div>
-            <div class="work"><i class="fa-brands fa-css3-alt"></i><p>CSS</p></div>
-            <div class="work"><i class="fa-brands fa-git-alt"></i><p>Git</p></div>
+            <div class="work">
+                <i class="fa-brands fa-python"></i>
+                <p>Python</p>
+            </div>
+
+            <div class="work">
+                <i class="fa-solid fa-database"></i>
+                <p>SQL</p>
+            </div>
+
+            <div class="work">
+                <i class="fa-solid fa-server"></i>
+                <p>Data Engineering</p>
+            </div>
+
+            <div class="work">
+                <i class="fa-solid fa-chart-line"></i>
+                <p>Data Analytics</p>
+            </div>
+
+            <div class="work">
+                <i class="fa-solid fa-brain"></i>
+                <p>Machine Learning</p>
+            </div>
+
+            <div class="work">
+                <i class="fa-brands fa-git-alt"></i>
+                <p>Git</p>
+            </div>
         </div>
     </div>
 </div>
 
-<!--------------------------------- EDUCATION ---------------------------------->
+<!-------------------------------- EDUCATION -------------------------------->
 <div id="educationn">
     <div class="container">
         <h1 class="subtitle">My Education</h1>
+
         <div class="education-grid">
 
             <div class="education-card" onclick="toggleDetails(this)">
                 <b>10th Standard (2019)</b>
                 <span class="edu-details">
-                    <p><b>School:</b> Sri Sathya Sai Lokaseva High School, Alike</p>
+                    <p><b>School:</b> Sri Sathya Sai Lokaseva High School</p>
                     <p><b>Aggregate:</b> 95.20%</p>
                 </span>
             </div>
 
             <div class="education-card" onclick="toggleDetails(this)">
-                <b>12th / Pre-University (2021)</b>
+                <b>12th / Pre University (2021)</b>
                 <span class="edu-details">
-                    <p><b>College:</b> Sri Sathya Sai Lokaseva PU College, Alike</p>
+                    <p><b>College:</b> Sri Sathya Sai Lokaseva PU College</p>
                     <p><b>Aggregate:</b> 94.67%</p>
                 </span>
             </div>
 
             <div class="education-card" onclick="toggleDetails(this)">
-                <b>B.E. AIML (2021 – 2025)</b>
+                <b>B.E. AIML (2025)</b>
                 <span class="edu-details">
-                    <p><b>College:</b> R N Shetty Institute of Technology</p>
-                    <p><b>CGPA:</b> 8.99</p>
-                </span>
-            </div>
-
-            <div class="education-card" onclick="toggleDetails(this)">
-                <b>M.E. Big Data Analytics (2025 – Present)</b>
-                <span class="edu-details">
-                    <p><b>Institute:</b> Manipal School of Information Sciences (MAHE)</p>
-                    <p><b>CGPA:</b> 9.08</p>
+                    <p><b>College:</b> RNS Institute of Technology</p>
+                    <p><b>CGPA:</b> 8.74</p>
                 </span>
             </div>
 
@@ -211,13 +205,44 @@
     </div>
 </div>
 
-<!--------------------------------- CONTACT ------------------------------------>
+<!-------------------------------- CONTACT -------------------------------->
 <div id="contact">
     <div class="container">
         <div class="row">
+
             <div class="contact-left">
                 <h1 class="subtitle">Contact Me</h1>
                 <p><i class="fa-solid fa-paper-plane"></i> darshanvv26@gmail.com</p>
-                <p><i class="fa-solid fa-phone"></i> +91 9482397982</p>
+                <p><i class="fa-solid fa-phone"></i> 9482397982</p>
+
                 <div class="social-icons">
-                    <a href="https://www.instagram.co
+                    <a href="https://www.instagram.com/darshan__vv"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://x.com/DarshanVidyadh1"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="https://www.linkedin.com/in/darshanvv26"><i class="fa-brands fa-linkedin-in"></i></a>
+                </div>
+            </div>
+
+            <div class="contact-right">
+                <form name="submit-to-google-sheet">
+                    <input type="text" name="name" placeholder="Your name" required>
+                    <input type="email" name="email" placeholder="Your email" required>
+                    <textarea name="Message" rows="6" placeholder="Your message"></textarea>
+                    <button type="submit">Submit</button>
+                </form>
+                <span id="msg"></span>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div id="cpr">
+    <div class="copyright">
+        Copyright © 2025 Darshan V V. All rights reserved.
+    </div>
+</div>
+
+<script defer src="script.js"></script>
+
+</body>
+</html>
