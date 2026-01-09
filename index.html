@@ -9,13 +9,15 @@
     <script src="https://kit.fontawesome.com/2f30317137.js" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <style>
-        html { scroll-behavior: smooth; }
+        html {
+            scroll-behavior: smooth;
+        }
     </style>
 </head>
 
 <body>
 
-<!-------------------------------- HEADER -------------------------------->
+<!--------------------------------- HEADER ------------------------------------->
 <div id="header">
     <div class="container">
         <nav>
@@ -25,7 +27,6 @@
                 <li><a href="#about">About</a></li>
                 <li><a href="#skillss">Skills</a></li>
                 <li><a href="#educationn">Education</a></li>
-                <li><a href="#experience">Experience</a></li>
                 <li><a href="#contact">Contact</a></li>
                 <li><a href="https://github.com/darshanvv26">Github</a></li>
                 <i class="fa-solid fa-circle-xmark" onclick="closemenu()"></i>
@@ -48,39 +49,60 @@
     </div>
 </div>
 
-<!-------------------------------- ABOUT -------------------------------->
+<!--------------------------------- ABOUT ------------------------------------->
 <div id="about">
     <div class="container">
         <div class="row">
             <div class="about-col1">
                 <img src="images/user.png">
             </div>
+
             <div class="about-col2">
                 <h1 class="subtitle">About Me</h1><br>
+
                 <p>
                     I am <b>Darshan V V</b>, a data-driven engineer with strong interests in
-<b>Big Data Analytics, Data Engineering, and Machine Learning</b>.
-Currently pursuing my <b>Master of Engineering in Big Data Analytics</b>
-at Manipal School of Information Sciences (MAHE).
-<br><br>
-I have a strong foundation in data structures, algorithms, and object-oriented
-programming, with hands-on experience in working with large-scale datasets,
-designing efficient data pipelines, and performing data analysis using modern
-tools and frameworks.
-<br><br>
-My practical exposure includes building end-to-end data-driven applications,
-developing Retrieval-Augmented Generation (RAG) systems, creating interactive
-dashboards, and optimizing SQL queries for performance and scalability.
-I enjoy translating raw data into meaningful insights that support informed
-decision-making.
-<br><br>
-I am a curious and continuous learner who actively explores emerging
-technologies in data engineering and AI, and I seek opportunities that challenge
-my problem-solving abilities while allowing me to contribute to impactful,
-real-world solutions.
-
+                    <b>Big Data Analytics, Data Engineering, and Machine Learning</b>.
+                    Currently pursuing my <b>Master of Engineering in Big Data Analytics</b>
+                    at Manipal School of Information Sciences (MAHE).
+                    <br><br>
+                    I have a strong foundation in data structures, algorithms, and object-oriented
+                    programming, with hands-on experience in working with large-scale datasets,
+                    designing efficient data pipelines, and performing data analysis using modern
+                    tools and frameworks.
+                    <br><br>
+                    My practical exposure includes building end-to-end data-driven applications,
+                    developing Retrieval-Augmented Generation (RAG) systems, creating interactive
+                    dashboards, and optimizing SQL queries for performance and scalability.
+                    I enjoy translating raw data into meaningful insights that support informed
+                    decision-making.
+                    <br><br>
+                    I am a curious and continuous learner who actively explores emerging
+                    technologies in data engineering and AI, and I seek opportunities that challenge
+                    my problem-solving abilities while allowing me to contribute to impactful,
+                    real-world solutions.
                 </p>
 
+                <!-- EXPERIENCE INSIDE ABOUT -->
+                <br>
+                <h2 class="subtitle" style="font-size: 22px;">Experience</h2>
+                <br>
+
+                <p>
+                    <b>Data Analyst Intern – Nineleaps Technology, Bangalore</b><br>
+                    June 2024 – August 2024
+                    <br><br>
+                    • Analyzed large-scale datasets using Python (Pandas, NumPy) and MySQL to derive
+                    actionable insights.<br>
+                    • Designed and optimized PySpark-based data pipelines and improved SQL query
+                    performance for high-volume structured data.<br>
+                    • Built interactive dashboards and automated reporting workflows using Looker
+                    Studio and Google Sheets, reducing manual effort.<br>
+                    • Collaborated with cross-functional teams and validated LLM-generated SQL queries
+                    for correctness and efficiency.
+                </p>
+
+                <!-- TABS -->
                 <div class="tab-titles">
                     <p class="tab-links active-link" onclick="opentab('skills', event)">Skills</p>
                     <p class="tab-links" onclick="opentab('projects', event)">Projects</p>
@@ -98,23 +120,18 @@ real-world solutions.
 
                 <div class="tab-contents" id="projects">
                     <ul>
-                        <!-- OLD PROJECT -->
                         <li>
                             <span>Cricket Stats Analysis</span><br>
                             Tools: MySQL, HTML, CSS, JavaScript, Python, Flask
                         </li>
-
-                        <!-- OLD PROJECT -->
                         <li>
                             <span>Desktop Screen Sharing Application</span><br>
                             Tools: HTML, CSS, JavaScript, NodeJS, JSON
                         </li>
-
-                        <!-- NEW PROJECT -->
                         <li>
                             <span>MSIS Student Chatbot (RAG)</span><br>
-                            Built a Retrieval-Augmented Generation chatbot using embeddings,
-                            vector databases, and Streamlit UI.
+                            Retrieval-Augmented Generation chatbot using vector databases and
+                            Streamlit UI.
                         </li>
                     </ul>
                 </div>
@@ -137,26 +154,7 @@ real-world solutions.
     </div>
 </div>
 
-<!-------------------------------- EXPERIENCE -------------------------------->
-<div id="experience">
-    <div class="container">
-        <h1 class="subtitle">Experience</h1>
-        <div class="services-list">
-            <div>
-                <h2>Data Analyst Intern</h2>
-                <h4>Nineleaps Technology, Bangalore</h4>
-                <p>
-                    • Analyzed large-scale datasets using Python, Pandas, NumPy, and MySQL.<br>
-                    • Built PySpark-based data pipelines and optimized SQL queries.<br>
-                    • Created dashboards using Looker Studio and automated reports.<br>
-                    • Validated LLM-generated SQL queries and worked with cross-functional teams.
-                </p>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-------------------------------- SKILLS -------------------------------->
+<!--------------------------------- SKILLS ------------------------------------->
 <div id="skillss">
     <div class="container">
         <h1 class="subtitle">My Skill Set</h1>
@@ -171,7 +169,7 @@ real-world solutions.
     </div>
 </div>
 
-<!-------------------------------- EDUCATION -------------------------------->
+<!--------------------------------- EDUCATION ---------------------------------->
 <div id="educationn">
     <div class="container">
         <h1 class="subtitle">My Education</h1>
@@ -194,7 +192,7 @@ real-world solutions.
             </div>
 
             <div class="education-card" onclick="toggleDetails(this)">
-                <b>B.E. Artificial Intelligence & Machine Learning (2021–2025)</b>
+                <b>B.E. AIML (2021 – 2025)</b>
                 <span class="edu-details">
                     <p><b>College:</b> R N Shetty Institute of Technology</p>
                     <p><b>CGPA:</b> 8.99</p>
@@ -213,7 +211,7 @@ real-world solutions.
     </div>
 </div>
 
-<!-------------------------------- CONTACT -------------------------------->
+<!--------------------------------- CONTACT ------------------------------------>
 <div id="contact">
     <div class="container">
         <div class="row">
@@ -222,31 +220,4 @@ real-world solutions.
                 <p><i class="fa-solid fa-paper-plane"></i> darshanvv26@gmail.com</p>
                 <p><i class="fa-solid fa-phone"></i> +91 9482397982</p>
                 <div class="social-icons">
-                    <a href="https://www.instagram.com/darshan__vv"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="https://x.com/DarshanVidyadh1"><i class="fa-brands fa-x-twitter"></i></a>
-                    <a href="https://www.linkedin.com/in/darshanvv26"><i class="fa-brands fa-linkedin-in"></i></a>
-                </div>
-            </div>
-
-            <div class="contact-right">
-                <form name="submit-to-google-sheet">
-                    <input type="text" name="name" placeholder="Your Name" required>
-                    <input type="email" name="email" placeholder="Your Email" required>
-                    <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
-                    <button type="submit">Submit</button>
-                </form>
-                <span id="msg"></span>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div id="cpr">
-    <div class="copyright">
-        Copyright © 2025 Darshan V V. All rights reserved.
-    </div>
-</div>
-
-<script defer src="script.js"></script>
-</body>
-</html>
+                    <a href="https://www.instagram.co
