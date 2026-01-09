@@ -129,7 +129,7 @@ function closemenu() {
     if (sidemenu) sidemenu.style.right = "-200px";
 }
 
-/**************** GOOGLE FORM SUBMISSION ****************/
+/**************** GOOGLE FORM SUBMISSION ****************///
 const scriptURL =
     'https://script.google.com/macros/s/AKfycbyVJdoLSjTakHv0p1tXdq3FV2Uo3doxBIX8r6OPHjj2aa_4LfKHDJWfzZMccKQuCkW41Q/exec';
 
