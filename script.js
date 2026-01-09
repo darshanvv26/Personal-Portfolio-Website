@@ -2,8 +2,8 @@
 var tablinks = document.getElementsByClassName("tab-links");
 var tabcontents = document.getElementsByClassName("tab-contents");
 
-function opentab(tabname, event) {
-    if (!event) return;
+function opentab(tabname) {
+    const evt = window.event;
 
     for (let tablink of tablinks) {
         tablink.classList.remove("active-link");
@@ -13,7 +13,10 @@ function opentab(tabname, event) {
         tabcontent.classList.remove("active-tab");
     }
 
-    event.currentTarget.classList.add("active-link");
+    if (evt && evt.currentTarget) {
+        evt.currentTarget.classList.add("active-link");
+    }
+
     document.getElementById(tabname).classList.add("active-tab");
 }
 
@@ -63,11 +66,8 @@ const scrollTopBtn = document.getElementById("scroll-top");
 window.addEventListener("scroll", function () {
     if (!scrollTopBtn) return;
 
-    if (document.documentElement.scrollTop > 100) {
-        scrollTopBtn.style.display = "block";
-    } else {
-        scrollTopBtn.style.display = "none";
-    }
+    scrollTopBtn.style.display =
+        document.documentElement.scrollTop > 100 ? "block" : "none";
 });
 
 if (scrollTopBtn) {
@@ -91,9 +91,9 @@ function downloadResume() {
 
 /**************** TYPING EFFECT ****************/
 const textArray = [
-    "I'm Darshan V V",
-    "Big Data Analytics Engineer",
-    "Data Engineer | ML Enthusiast"
+    "Hi, I'm Darshan V V",
+    "I'm a Data Engineer",
+    "I'm an ML Enthusiast"
 ];
 
 let index = 0;
