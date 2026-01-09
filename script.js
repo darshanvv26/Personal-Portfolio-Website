@@ -3,12 +3,16 @@ var tablinks = document.getElementsByClassName("tab-links");
 var tabcontents = document.getElementsByClassName("tab-contents");
 
 function opentab(tabname, event) {
+    if (!event) return;
+
     for (let tablink of tablinks) {
         tablink.classList.remove("active-link");
     }
+
     for (let tabcontent of tabcontents) {
         tabcontent.classList.remove("active-tab");
     }
+
     event.currentTarget.classList.add("active-link");
     document.getElementById(tabname).classList.add("active-tab");
 }
@@ -16,16 +20,15 @@ function opentab(tabname, event) {
 /**************** EDUCATION CARD TOGGLE ****************/
 function toggleDetails(card) {
     const allCards = document.querySelectorAll('.education-card');
+    const details = card.querySelector('.edu-details');
 
     allCards.forEach(otherCard => {
         if (otherCard !== card) {
             otherCard.classList.remove('expanded');
-            otherCard.querySelector('.edu-details').style.display = "none";
             otherCard.style.display = "flex";
+            otherCard.querySelector('.edu-details').style.display = "none";
         }
     });
-
-    const details = card.querySelector('.edu-details');
 
     if (card.classList.contains('expanded')) {
         card.classList.remove('expanded');
@@ -44,31 +47,38 @@ function toggleDetails(card) {
 $('nav a').on('click', function (event) {
     if (this.hash !== "") {
         event.preventDefault();
-        $('html, body').animate(
-            { scrollTop: $(this.hash).offset().top },
-            800
-        );
+        const target = $(this.hash);
+        if (target.length) {
+            $('html, body').animate(
+                { scrollTop: target.offset().top },
+                800
+            );
+        }
     }
 });
 
 /**************** SCROLL TO TOP ****************/
 const scrollTopBtn = document.getElementById("scroll-top");
 
-window.onscroll = function () {
+window.addEventListener("scroll", function () {
+    if (!scrollTopBtn) return;
+
     if (document.documentElement.scrollTop > 100) {
         scrollTopBtn.style.display = "block";
     } else {
         scrollTopBtn.style.display = "none";
     }
-};
+});
 
-scrollTopBtn.onclick = function () {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-};
+if (scrollTopBtn) {
+    scrollTopBtn.onclick = function () {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    };
+}
 
 /**************** DOWNLOAD RESUME ****************/
 function downloadResume() {
-    const filePath = "images/Darshan_Msis_Resume.pdf"; // 🔁 rename file accordingly
+    const filePath = "images/Darshan_Msis_Resume.pdf";
 
     const link = document.createElement("a");
     link.href = filePath;
@@ -80,7 +90,7 @@ function downloadResume() {
 }
 
 /**************** TYPING EFFECT ****************/
-let textArray = [
+const textArray = [
     "I'm Darshan V V",
     "Big Data Analytics Engineer",
     "Data Engineer | ML Enthusiast"
@@ -91,6 +101,8 @@ let charIndex = 0;
 const typingElement = document.querySelector(".typing");
 
 function typeEffect() {
+    if (!typingElement) return;
+
     if (charIndex < textArray[index].length) {
         typingElement.textContent += textArray[index].charAt(charIndex);
         charIndex++;
@@ -110,11 +122,11 @@ typeEffect();
 var sidemenu = document.getElementById("sidemenu");
 
 function openmenu() {
-    sidemenu.style.right = "0";
+    if (sidemenu) sidemenu.style.right = "0";
 }
 
 function closemenu() {
-    sidemenu.style.right = "-200px";
+    if (sidemenu) sidemenu.style.right = "-200px";
 }
 
 /**************** GOOGLE FORM SUBMISSION ****************/
@@ -125,18 +137,22 @@ const form = document.forms['submit-to-google-sheet'];
 const msg = document.getElementById("msg");
 
 if (form) {
-    form.addEventListener('submit', e => {
+    form.addEventListener('submit', function (e) {
         e.preventDefault();
 
-        fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+        fetch(scriptURL, {
+            method: 'POST',
+            body: new FormData(form)
+        })
             .then(() => {
-                msg.innerHTML = "Message sent successfully ✔";
-                setTimeout(() => (msg.innerHTML = ""), 5000);
+                if (msg) msg.innerHTML = "Message sent successfully ✔";
+                setTimeout(() => {
+                    if (msg) msg.innerHTML = "";
+                }, 5000);
                 form.reset();
             })
             .catch(error => {
-                msg.innerHTML = "Error submitting form ❌";
+                if (msg) msg.innerHTML = "Error submitting form ❌";
                 console.error('Error!', error.message);
             });
-    });
 }
