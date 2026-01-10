@@ -1,115 +1,102 @@
-/**************** TAB SWITCH (ABOUT SECTION) ****************/
 var tablinks = document.getElementsByClassName("tab-links");
 var tabcontents = document.getElementsByClassName("tab-contents");
 
 function opentab(tabname) {
-    const evt = window.event;
-
-    for (let tablink of tablinks) {
+    for (tablink of tablinks) {
         tablink.classList.remove("active-link");
     }
-
-    for (let tabcontent of tabcontents) {
+    for (tabcontent of tabcontents) {
         tabcontent.classList.remove("active-tab");
     }
-
-    if (evt && evt.currentTarget) {
-        evt.currentTarget.classList.add("active-link");
-    }
-
+    event.currentTarget.classList.add('active-link');
     document.getElementById(tabname).classList.add("active-tab");
 }
 
-/**************** EDUCATION CARD TOGGLE ****************/
-function toggleDetails(card) {
-    const allCards = document.querySelectorAll('.education-card');
-    const details = card.querySelector('.edu-details');
+function toggleDetails(element) {
+    var clickedCard = element.parentElement;
+    var allCards = document.querySelectorAll('.education-card');
+    var details = clickedCard.querySelector('.edu-details');
 
-    allCards.forEach(otherCard => {
-        if (otherCard !== card) {
-            otherCard.classList.remove('expanded');
-            otherCard.style.display = "flex";
-            otherCard.querySelector('.edu-details').style.display = "none";
-        }
-    });
-
-    if (card.classList.contains('expanded')) {
-        card.classList.remove('expanded');
-        details.style.display = "none";
-        allCards.forEach(c => c.style.display = "flex");
-    } else {
-        allCards.forEach(c => {
-            if (c !== card) c.style.display = "none";
+    // Check if it's already expanded
+    if (clickedCard.classList.contains('expanded')) {
+        // Reset all cards to normal
+        allCards.forEach(card => {
+            card.classList.remove('expanded');
+            card.style.display = "flex";
+            card.querySelector('.edu-details').style.display = "none"; // Hide details
         });
-        card.classList.add('expanded');
+    } else {
+        // Hide all cards except the clicked one
+        allCards.forEach(card => {
+            if (card !== clickedCard) {
+                card.style.display = "none";
+            }
+        });
+
+        // Expand clicked card to center
+        clickedCard.classList.add('expanded');
+
+        // Show education details inside the expanded card
         details.style.display = "block";
     }
 }
 
-/**************** SMOOTH SCROLL ****************/
-$('nav a').on('click', function (event) {
+// Smooth Scroll
+$('nav a').on('click', function(event) {
     if (this.hash !== "") {
         event.preventDefault();
-        const target = $(this.hash);
-        if (target.length) {
-            $('html, body').animate(
-                { scrollTop: target.offset().top },
-                800
-            );
-        }
+        $('html, body').animate({
+            scrollTop: $(this.hash).offset().top
+        }, 800);
     }
 });
 
-/**************** SCROLL TO TOP ****************/
+// Scroll to Top Button
 const scrollTopBtn = document.getElementById("scroll-top");
+window.onscroll = function() {
+    if (document.documentElement.scrollTop > 100) {
+        scrollTopBtn.style.display = "block";
+    } else {
+        scrollTopBtn.style.display = "none";
+    }
+};
 
-window.addEventListener("scroll", function () {
-    if (!scrollTopBtn) return;
+scrollTopBtn.onclick = function() {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+};
 
-    scrollTopBtn.style.display =
-        document.documentElement.scrollTop > 100 ? "block" : "none";
-});
-
-if (scrollTopBtn) {
-    scrollTopBtn.onclick = function () {
-        window.scrollTo({ top: 0, behavior: "smooth" });
-    };
-}
-
-/**************** DOWNLOAD RESUME ****************/
+// Download Resume
 function downloadResume() {
-    const filePath = "images/Darshan_Msis_Resume.pdf";
+    // Provide the correct file path for your resume (e.g., PDF file)
+    const filePath = "images/Resume..pdf";
 
+    // Create an anchor element dynamically
     const link = document.createElement("a");
     link.href = filePath;
-    link.download = "Darshan_V_V_Resume.pdf";
+    link.download = "Resume"; // Set the download file name
 
+    // Append the anchor to the body, trigger the click, and remove it
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
 }
 
-/**************** TYPING EFFECT ****************/
-const textArray = [
-    "Hi, I'm Darshan V V",
-    "I'm a Data Engineer",
-    "I'm an ML Enthusiast"
-];
-
+// Typing Effect
+let textArray = ["I'm Darshan V V", "I'm a Developer", "I write code"];
 let index = 0;
 let charIndex = 0;
-const typingElement = document.querySelector(".typing");
 
 function typeEffect() {
-    if (!typingElement) return;
-
     if (charIndex < textArray[index].length) {
-        typingElement.textContent += textArray[index].charAt(charIndex);
+        document.querySelector(".typing").textContent += textArray[index].charAt(charIndex);
         charIndex++;
         setTimeout(typeEffect, 100);
     } else {
         setTimeout(() => {
-            typingElement.textContent = "";
+            document.querySelector(".typing").textContent = "";
             charIndex = 0;
             index = (index + 1) % textArray.length;
             typeEffect();
@@ -118,41 +105,55 @@ function typeEffect() {
 }
 typeEffect();
 
-/**************** MOBILE MENU ****************/
+function toggleDetails(card) {
+    // Get all cards
+    const allCards = document.querySelectorAll('.education-card');
+
+    // Toggle the clicked card's details
+    card.querySelector('.edu-details').classList.toggle('show-details');
+
+    // Hide details for all other cards
+    allCards.forEach(otherCard => {
+        if (otherCard !== card) {
+            otherCard.querySelector('.edu-details').classList.remove('show-details');
+        }
+    });
+}
+
 var sidemenu = document.getElementById("sidemenu");
 
 function openmenu() {
-    if (sidemenu) sidemenu.style.right = "0";
+    sidemenu.style.right = "0";
 }
 
 function closemenu() {
-    if (sidemenu) sidemenu.style.right = "-200px";
+    sidemenu.style.right = "-200px";
 }
 
-/**************** GOOGLE FORM SUBMISSION ****************///
-const scriptURL =
-    'https://script.google.com/macros/s/AKfycbyVJdoLSjTakHv0p1tXdq3FV2Uo3doxBIX8r6OPHjj2aa_4LfKHDJWfzZMccKQuCkW41Q/exec';
-
+const scriptURL = 'https://script.google.com/macros/s/AKfycbyVJdoLSjTakHv0p1tXdq3FV2Uo3doxBIX8r6OPHjj2aa_4LfKHDJWfzZMccKQuCkW41Q/exec';
 const form = document.forms['submit-to-google-sheet'];
 const msg = document.getElementById("msg");
 
 if (form) {
-    form.addEventListener('submit', function (e) {
+    form.addEventListener('submit', e => {
         e.preventDefault();
 
         fetch(scriptURL, {
-            method: 'POST',
-            body: new FormData(form)
-        })
-            .then(() => {
-                if (msg) msg.innerHTML = "Message sent successfully ✔";
+                method: 'POST',
+                body: new FormData(form)
+            })
+            .then(response => {
+                msg.innerHTML = "Message sent successfully";
                 setTimeout(() => {
-                    if (msg) msg.innerHTML = "";
+                    msg.innerHTML = "";
                 }, 5000);
                 form.reset();
             })
             .catch(error => {
-                if (msg) msg.innerHTML = "Error submitting form ❌";
+                msg.innerHTML = "Error submitting form!";
                 console.error('Error!', error.message);
             });
+    });
+} else {
+    console.error("Form not found. Ensure the form has the correct name attribute.");
 }
