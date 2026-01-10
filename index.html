@@ -5,11 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Darshan Portfolio Website</title>
-
     <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/2f30317137.js" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
     <style>
         html {
             scroll-behavior: smooth;
@@ -18,231 +16,209 @@
 </head>
 
 <body>
-
-<!-------------------------------- HEADER -------------------------------->
-<div id="header">
-    <div class="container">
-
-        <nav>
-            <img src="images/logo.png" class="logo">
-
-            <ul id="sidemenu">
-                <li><a href="#header">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#skillss">Skills</a></li>
-                <li><a href="#educationn">Education</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li><a href="https://github.com/darshanvv26">Github</a></li>
-                <i class="fa-solid fa-circle-xmark" onclick="closemenu()"></i>
-            </ul>
-
-            <i class="fa-solid fa-bars" onclick="openmenu()"></i>
-        </nav>
-
-        <div class="image-container">
-            <img src="images/Screenshot 2025-02-11 182427.png" class="styled-image">
-        </div>
-
-        <div class="header-text">
-            <section id="home">
-                <h1><span class="typing"></span></h1>
-                <button onclick="downloadResume()">Download CV</button>
-            </section>
-        </div>
-
-        <button id="scroll-top">⬆</button>
-    </div>
-</div>
-
-<!-------------------------------- ABOUT -------------------------------->
-<div id="about">
-    <div class="container">
-        <div class="row">
-
-            <div class="about-col1">
-                <img src="images/user.png">
+    <div id="header">
+        <div class="container">
+            <nav>
+                <img src="images/logo.png" class="logo">
+                <ul id="sidemenu">
+                    <li><a href="#header">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#skillss">Skills</a></li>
+                    <li><a href="#educationn">Education</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="https://github.com/darshanvv26">Github</a></li>
+                    <i class="fa-solid fa-circle-xmark" onclick="closemenu()"></i>
+                </ul>
+                <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+            </nav>
+            <div class="image-container">
+                <img src="images/Screenshot 2025-02-11 182427.png" class="styled-image">
             </div>
 
-            <div class="about-col2">
-                <h1 class="subtitle">About Me</h1><br>
+            <div class="header-text">
+                <section id="home">
+                    <h1>Hi, <span class="typing"></span></h1>
+                    <button onclick="downloadResume()">Download CV</button>
+                </section>
+            </div>
+            <button id="scroll-top">⬆</button>
+        </div>
+    </div>
 
-                <p>
-                    I am <b>Darshan V V</b>, a data-driven engineer with strong interests in
-                    <b>Data Engineering, Big Data Analytics, and Machine Learning</b>.
-                    I enjoy building scalable data pipelines, working with structured data,
-                    and developing analytical and AI-driven solutions that solve real-world problems.
-                </p>
-
-                <!-- TABS -->
-                <div class="tab-titles">
-                    <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
-                    <p class="tab-links" onclick="opentab('projects')">Projects</p>
-                    <p class="tab-links" onclick="opentab('education')">Education</p>
-                    <p class="tab-links" onclick="opentab('experience')">Experience</p>
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col1">
+                    <img src="images/user.png">
                 </div>
-
-                <!-- SKILLS TAB -->
-                <div class="tab-contents active-tab" id="skills">
-                    <ul>
-                        <li><span>Programming</span><br>Python, SQL</li>
-                        <li><span>Data Engineering</span><br>PySpark, Hadoop, Spark</li>
-                        <li><span>Data Analysis</span><br>Pandas, NumPy, Power BI</li>
-                        <li><span>Machine Learning</span><br>Scikit-learn, ML Pipelines</li>
-                    </ul>
-                </div>
-
-                <!-- PROJECTS TAB -->
-                <div class="tab-contents" id="projects">
-                    <ul>
-                        <li>
-                            <span>Cricket Stats Analysis</span><br>
-                            Python, Flask, MySQL-based analytics platform
-                        </li>
-                        <li>
-                            <span>Desktop Screen Sharing Application</span><br>
-                            NodeJS-based real-time screen sharing system
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- EDUCATION TAB -->
-                <div class="tab-contents" id="education">
-                    <ul>
-                        <li>
-                            <span>Bachelor of Engineering – AIML</span><br>
-                            RNS Institute of Technology
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- EXPERIENCE TAB -->
-                <div class="tab-contents" id="experience">
+                <div class="about-col2">
+                    <h1 class="subtitle">About Me</h1><br>
                     <p>
-                        Worked as a <b>Data Analyst Intern</b> at <b>Nineleaps Technology</b>, where
-                        I analyzed large datasets using Python and SQL, built and optimized
-                        PySpark-based data pipelines, and created interactive dashboards for
-                        business reporting. I collaborated with cross-functional teams and
-                        validated LLM-generated SQL queries to ensure accuracy and performance.
+                        I am Darshan V V, a passionate and innovative Artificial Intelligence and Machine Learning
+                        engineering student at RNS Institute of Technology, Bengaluru. With a strong foundation in
+                        Python, JavaScript, SQL, and C programming, I enjoy solving complex problems and building
+                        efficient software solutions.
+                        My expertise spans data structures, algorithms, object-oriented programming, and cloud computing
+                        basics.
+                        Eager to learn and grow, I actively seek opportunities that challenge my analytical thinking and
+                        technical abilities.
                     </p>
-                </div>
-
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-------------------------------- SKILL SET (ICONS) -------------------------------->
-<div id="skillss">
-    <div class="container">
-        <h1 class="subtitle">My Skill Set</h1>
-
-        <div class="work-list">
-            <div class="work">
-                <i class="fa-brands fa-python"></i>
-                <p>Python</p>
-            </div>
-
-            <div class="work">
-                <i class="fa-solid fa-database"></i>
-                <p>SQL</p>
-            </div>
-
-            <div class="work">
-                <i class="fa-solid fa-server"></i>
-                <p>Data Engineering</p>
-            </div>
-
-            <div class="work">
-                <i class="fa-solid fa-chart-line"></i>
-                <p>Data Analytics</p>
-            </div>
-
-            <div class="work">
-                <i class="fa-solid fa-brain"></i>
-                <p>Machine Learning</p>
-            </div>
-
-            <div class="work">
-                <i class="fa-brands fa-git-alt"></i>
-                <p>Git</p>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-------------------------------- EDUCATION -------------------------------->
-<div id="educationn">
-    <div class="container">
-        <h1 class="subtitle">My Education</h1>
-
-        <div class="education-grid">
-
-            <div class="education-card" onclick="toggleDetails(this)">
-                <b>10th Standard (2019)</b>
-                <span class="edu-details">
-                    <p><b>School:</b> Sri Sathya Sai Lokaseva High School</p>
-                    <p><b>Aggregate:</b> 95.20%</p>
-                </span>
-            </div>
-
-            <div class="education-card" onclick="toggleDetails(this)">
-                <b>12th / Pre University (2021)</b>
-                <span class="edu-details">
-                    <p><b>College:</b> Sri Sathya Sai Lokaseva PU College</p>
-                    <p><b>Aggregate:</b> 94.67%</p>
-                </span>
-            </div>
-
-            <div class="education-card" onclick="toggleDetails(this)">
-                <b>B.E. AIML (2025)</b>
-                <span class="edu-details">
-                    <p><b>College:</b> RNS Institute of Technology</p>
-                    <p><b>CGPA:</b> 8.74</p>
-                </span>
-            </div>
-
-        </div>
-    </div>
-</div>
-
-<!-------------------------------- CONTACT -------------------------------->
-<div id="contact">
-    <div class="container">
-        <div class="row">
-
-            <div class="contact-left">
-                <h1 class="subtitle">Contact Me</h1>
-                <p><i class="fa-solid fa-paper-plane"></i> darshanvv26@gmail.com</p>
-                <p><i class="fa-solid fa-phone"></i> 9482397982</p>
-
-                <div class="social-icons">
-                    <a href="https://www.instagram.com/darshan__vv"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="https://x.com/DarshanVidyadh1"><i class="fa-brands fa-x-twitter"></i></a>
-                    <a href="https://www.linkedin.com/in/darshanvv26"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                        <p class="tab-links" onclick="opentab('projects')">Projects</p>
+                        <p class="tab-links" onclick="opentab('education')">Education</p>
+                    </div>
+                    <div class="tab-contents active-tab" id="skills">
+                        <ul>
+                            <li><span>Python</span><br>Programming and Problem Solving</li>
+                            <li><span>HTML, CSS and Javascript</span><br>Web Development</li>
+                            <li><span>SQL(MySQL)</span><br>Database Management System</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="projects">
+                        <ul>
+                            <li><span>Cricket Stats Analysis</span><br>Tools Used: MySQL, HTML, CSS, Javascript, Python, Flask</li>
+                            <li><span>Crafting Desktop Screen Sharing Application</span><br>Tools Used: HTML, CSS, Javascript, JSON, NodeJS.</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="education">
+                        <ul>
+                            <li><span>Schooling</span><br>Sri Satya Sai Lokaseva High School, Alike</li>
+                            <li><span>Pre University College</span><br>Sri Satya Sai Lokaseva Pre University College, Alike</li>
+                            <li><span>Bachelor of Engineering in AIML</span><br>RNS Institute of Technology</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
-
-            <div class="contact-right">
-                <form name="submit-to-google-sheet">
-                    <input type="text" name="name" placeholder="Your name" required>
-                    <input type="email" name="email" placeholder="Your email" required>
-                    <textarea name="Message" rows="6" placeholder="Your message"></textarea>
-                    <button type="submit">Submit</button>
-                </form>
-                <span id="msg"></span>
-            </div>
-
         </div>
     </div>
-</div>
 
-<div id="cpr">
-    <div class="copyright">
-        Copyright © 2025 Darshan V V. All rights reserved.
+    <div id="services">
+        <div class="container">
+            <h1 class="subtitle">My Projects</h1>
+            <div class="services-list">
+                <div>
+                    <h2>Cricket Stat Analysis</h2><br>
+                    <p>
+                        Developed a web-based application designed to provide users with detailed statistics of cricket
+                        players and allow for easy comparison between different players. The application features a user-friendly
+                        interface where users can add player statistics, search for player details, and compare the stats of two players and
+                        can even compare playing eleven strength between two teams.
+                    </p>
+                    <a href="https://github.com/darshanvv26/CricketProject">Learn more</a>
+                </div>
+                <div>
+                    <h2>Screen Sharing Application</h2><br>
+                    <p>
+                        Desktop screen sharing application captures a user’s screen, encodes it for efficient
+                        transmission, and securely sends it over a network to another user who then decodes and views it. Key components include
+                        screen capture, encoding, secure network transmission, and decoding, along with a user-friendly interface and
+                        error-handling mechanisms.
+                    </p>
+                    <a href="#">Learn more</a>
+                </div>
+            </div>
+        </div>
     </div>
-</div>
 
-<script defer src="script.js"></script>
+    <div id="skillss">
+        <div class="container">
+            <h1 class="subtitle">My Skill Set</h1>
+            <div class="work-list">
+                <div class="work">
+                    <i class="fa-brands fa-python"></i>
+                    <p>Python</p>
+                </div>
+                <div class="work">
+                    <i class="fa-brands fa-js"></i>
+                    <p>JavaScript</p>
+                </div>
+                <div class="work">
+                    <i class="fa-brands fa-html5"></i>
+                    <p>HTML</p>
+                </div>
+                <div class="work">
+                    <i class="fa-brands fa-css3-alt"></i>
+                    <p>CSS</p>
+                </div>
+                <div class="work">
+                    <i class="fa-solid fa-database"></i>
+                    <p>MySQL</p>
+                </div>
+                <div class="work">
+                    <i class="fa-brands fa-git-alt"></i>
+                    <p class="git-text">Git Version Control</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="educationn">
+        <div class="container">
+            <h1 class="subtitle">My Education</h1>
+            <div class="education-grid">
+                <div class="education-card" onclick="toggleDetails(this)">
+                    <b>10th Standard (2019)</b>
+                    <span class="edu-details">
+                        <p><b>School:</b> Sri Sathya Sai Lokaseva High School, Alike</p>
+                        <p><b>Aggregate:</b> 95.20%</p>
+                        <p><b>Specialization:</b> General Subjects</p>
+                    </span>
+                </div>
+                <div class="education-card" onclick="toggleDetails(this)">
+                    <b>12th/Pre University (2021)</b>
+                    <span class="edu-details">
+                        <p><b>College:</b> Sri Sathya Sai Lokaseva Pre University College, Alike</p>
+                        <p><b>Aggregate:</b> 94.67%</p>
+                        <p><b>Specialization:</b> PCMB (Physics, Chemistry, Mathematics, Biology)</p>
+                    </span>
+                </div>
+                <div class="education-card" onclick="toggleDetails(this)">
+                    <b>Bachelor of Engineering (2025)</b>
+                    <span class="edu-details">
+                        <p><b>College:</b> RNS Institute of Technology</p>
+                        <p><b>CGPA:</b> 8.74</p>
+                        <p><b>Specialization:</b> AIML (Artificial Intelligence & Machine Learning)</p>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="contact-left">
+                    <h1 class="subtitle">Contact Me</h1>
+                    <p><i class="fa-solid fa-paper-plane"></i>darshanvv26@gmail.com</p>
+                    <p><i class="fa-solid fa-phone"></i>9482397982</p>
+                    <div class="social-icons">
+                        <a href="https://www.instagram.com/darshan__vv"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://x.com/DarshanVidyadh1"><i class="fa-brands fa-x-twitter"></i></a>
+                        <a href="https://www.linkedin.com/in/darshanvv26"><i class="fa-brands fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="contact-right">
+                    <form class="form-container" name="submit-to-google-sheet">
+                        <input type="text" name="name" placeholder="your name" required>
+                        <input type="email" name="email" placeholder="your email" required>
+                        <textarea name="Message" rows="6" placeholder="your message"></textarea>
+                        <button type="submit">Submit</button>
+                    </form>
+                    <span id="msg"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="cpr">
+        <div class="copyright">
+            Copyright &copy; 2025 Darshan V V. All rights reserved.
+        </div>
+    </div>
+
+    <script defer src="script.js"></script>
 
 </body>
+
 </html>
